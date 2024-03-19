@@ -75,7 +75,7 @@ source /cvmfs/sft.cern.ch/lcg/views/LCG_103/x86_64-centos7-gcc12-opt/setup.sh
 ```
 which has already been included in `setup.sh`.
 
-Then, the environment with CMake 3.23.2 and ROOT 6.28/00 will be configured. As long as neither compilation errors are raised, nor the CMake version requirement is met, other versions on the LCG can also be used. :stuck_out_tongue:
+Then, the environment with CMake 3.23.2 and ROOT 6.28/00 will be configured. As long as neither compilation errors are raised, nor the CMake version is lower than 3.17, other versions on the LCG can also be used. :stuck_out_tongue:
 
 ### Notice
 On WSL2, the above environment cannot be used for event display, since error occurs with X11 because of LCG! Instead, the environment used while designing this program was with
