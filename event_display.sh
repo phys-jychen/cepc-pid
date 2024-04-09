@@ -1,7 +1,7 @@
 #! /bin/bash
 source /afs/ihep.ac.cn/users/c/chenjiyuan/conda.env
 
-#Available modes: "display" for event display, and "projection" for energy projection. They must correspond to the names of the existing python files!
+#Available modes: ‘display’ for event display, and ‘projection’ for energy projection. They must match the names of the existing python files!
 mode="display"
 energy=60
 particle="e-"

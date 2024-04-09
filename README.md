@@ -41,7 +41,7 @@ After this, an output file whose name has a prefix ‘hit’ will be created in 
 In any directory, execute
 ```shell
 iPID -r -f [file]
-# or
+# Or
 iPID -r -f [file] -t [tree]
 ```
 The name of the output file will be given a prefix ‘rec’ in your current directory, and the original branches will not be kept for the sake of saving space. If you need to add some new variables or modify the definitions of some of them, please go to the file `src/Variables.cxx`.
@@ -50,7 +50,7 @@ The name of the output file will be given a prefix ‘rec’ in your current dir
 Before you begin, make sure that the variables as well as the ROOT files listed in `pid.cxx` re all present (you can also modify this file to meet your own needs). Then, execute
 ```shell
 iPID -b
-# or
+# Or
 iPID -b -t [tree]
 ```
 Eventually, you can see the output file containing the data obtained during training and test (`TMVAMulticlass.root`) in your current directory.
@@ -58,7 +58,7 @@ Eventually, you can see the output file containing the data obtained during trai
 Possibly you need to know the performance of BDT on the validation dataset, or use the training results for application. In either case, execute
 ```shell
 iPID -c -f [file]
-# or
+# Or
 iPID -c -f [file] -t [tree]
 ```
 Then, the BDT response will be stored in the output ROOT file, whose name has a prefix ‘bdt’, in your current directory. While modifying `src/BDT.cxx`, make sure that the input variables are identical to those in `bdt.cxx`, including the order!
@@ -67,12 +67,10 @@ Then, the BDT response will be stored in the output ROOT file, whose name has a 
 In the directory you have installed, run
 ```shell
 ./event_display.sh
-# Or
-./energy_projection.sh
 ```
 to obtain a figure of event display or energy projection (on $xOy$ plane), which will be saved in a directory assigned in this shell script (default: `figs/`).
 
-You can modify these two shell scripts to meet your own needs: input ROOT file, tree name, title of the figure, ID of the event, directory to save the output file, name of the output file, and instantly show the figure or not.
+You can modify these two shell scripts to meet your own needs: display type (event display or energy projection), input ROOT file, tree name, title of the figure, ID of the event, directory to save the output file, name of the output file, and instantly show the figure or not.
 
 ## Environment Set-up
 This project requires CMake version >= 3.17. If you are working on the cluster of INPAC, IHEP, etc., the environment can be easily set up by simply executing
