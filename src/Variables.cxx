@@ -601,7 +601,6 @@ Int_t PID::GenNtuple(const string& file, const string& tree)
         Double_t FD_3D_rms = Sqrt(total2 / num);
         return FD_3D_rms;
     }, {"FD_3D"})
-//    .Range(1)
     .Snapshot(tree, outname);
     delete dm;
 

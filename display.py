@@ -31,7 +31,6 @@ def read_file(fname: str, tree: str, event_index: int):
         assert len(x) == len(z)
         assert len(x) == len(energy)
 
-
         znew, ynew, xnew, enew = (np.array(a) for a in zip(*sorted(zip(z, y, x, energy), reverse=True)))
 
         return xnew, ynew, znew, enew
@@ -50,7 +49,6 @@ def plot(fname: str, tree: str, event_index: int, title: str):
     ratioY = 1
     ratioZ = WidthY / (LayerThick * (nLayer + 1))
 
-    # fig, ax = plt.subplots(subplot_kw={'projection': '3d'})
     fig = plt.figure()
     spec = fig.add_gridspec(2, 2)
 
@@ -99,10 +97,8 @@ def plot(fname: str, tree: str, event_index: int, title: str):
             axis.set_yticks([])
             axis.set_zticks([])
 
-    # ax_xz.set_title("XZ Plane", size='x-large')
     ax_xz.set_xlabel("X", size='large', labelpad=-10)
     ax_xz.set_ylabel("Z", size='large', labelpad=-10)
-    # ax_xy.set_title("XY Plane", size='x-large')
     ax_xy.set_xlabel("X", size='large', labelpad=-10)
     ax_xy.set_zlabel("Y", size='large', labelpad=-10)
 

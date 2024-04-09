@@ -13,11 +13,15 @@ At first, you can run
 ```shell
 iPID --help
 ```
-to display help information of analysis, and
+to display help information of analysis,
 ```shell
 python display.py -h
 ```
-for that of event display (mind the order of `display.py` and `-h`!). For more detail, please refer to the following instructions. :stuck_out_tongue:
+for that of event display, and
+```shell
+python projection.py -h
+```
+for that of energy projection (mind the order of python file name and `-h`!). For more detail, please refer to the following instructions. :stuck_out_tongue:
 
 ### Sample Preparation
 This project is only compatible with MC samples generated with `SimCalModule`, which has not been publicised yet… If you have generated samples with different crystal size and/or crystal number, you have to modify `include/PID.h`, such that the program can function smoothly.
@@ -59,14 +63,16 @@ iPID -c -f [file] -t [tree]
 ```
 Then, the BDT response will be stored in the output ROOT file, whose name has a prefix ‘bdt’, in your current directory. While modifying `src/BDT.cxx`, make sure that the input variables are identical to those in `bdt.cxx`, including the order!
 
-### Event Display
+### Event Display and Energy Projection
 In the directory you have installed, run
 ```shell
 ./event_display.sh
+# Or
+./energy_projection.sh
 ```
-to obtain a figure of event display, which will be saved in a directory assigned in this shell script (default: `figs/`).
+to obtain a figure of event display or energy projection (on $xOy$ plane), which will be saved in a directory assigned in this shell script (default: `figs/`).
 
-You can modify `event_display.sh` to meet your own needs: input ROOT file, tree name, title of the figure, ID of the event, directory to save the output file, name of the output file, and instantly show the figure or not.
+You can modify these two shell scripts to meet your own needs: input ROOT file, tree name, title of the figure, ID of the event, directory to save the output file, name of the output file, and instantly show the figure or not.
 
 ## Environment Set-up
 This project requires CMake version >= 3.17. If you are working on the cluster of INPAC, IHEP, etc., the environment can be easily set up by simply executing
@@ -94,7 +100,7 @@ cd cepc-pid
 mkdir build
 cd build
 cmake ..
-make -j100    # Just do it!
+make -j
 source setup.sh
 ```
 
@@ -109,4 +115,4 @@ By now, the compilation have been finished. Prepare your datasets, and have fun!
 Definitions of some variables need further check.
 
 ## Reference
-The framework of this project comes from [dss-pid](https://github.com/phys-jychen/dss-pid). Both are high-granularity homogeneous ECAL, with differences in energy range and material and arrangement of the crystal. The definitions of some variables have been modified; and the execution has been greatly simplified.
+The framework of this project comes from [dss-pid](https://github.com/phys-jychen/dss-pid). Both are high-granularity homogeneous ECAL, with differences in energy range, material, and arrangement of the crystal. The definitions of some variables have been modified; and the execution has been greatly simplified.

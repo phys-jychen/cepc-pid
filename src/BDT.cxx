@@ -17,28 +17,28 @@ Int_t PID::TrainBDT()
     for (const auto& i : train_sig)
     {
         TFile* f = TFile::Open(i.first, "READ");
-        TTree* t = (TTree*) f->Get(i.second);
+        TTree* t = f->Get<TTree>(i.second);
         trsig.emplace_back(t);
     }
 
     for (const auto& j : train_bkg)
     {
         TFile* f = TFile::Open(j.first, "READ");
-        TTree* t = (TTree*) f->Get(j.second);
+        TTree* t = f->Get<TTree>(j.second);
         trbkg.emplace_back(t);
     }
 
     for (const auto& k : test_sig)
     {
         TFile* f = TFile::Open(k.first, "READ");
-        TTree* t = (TTree*) f->Get(k.second);
+        TTree* t = f->Get<TTree>(k.second);
         tesig.emplace_back(t);
     }
 
     for (const auto& l : test_bkg)
     {
         TFile* f = TFile::Open(l.first, "READ");
-        TTree* t = (TTree*) f->Get(l.second);
+        TTree* t = f->Get<TTree>(l.second);
         tebkg.emplace_back(t);
     }
 

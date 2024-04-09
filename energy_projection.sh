@@ -16,7 +16,7 @@ filename="/cefs/higgs/chenjiyuan/cepc-pid/run/cubic/root/thick1_layer30/job${job
 #tree=treeEvt
 event_index=2025
 save_dir="/cefs/higgs/chenjiyuan/cepc-pid/figs/"
-output="Display_${particle}_${energy}GeV.pdf"
+output="Projection_${particle}_${energy}GeV.pdf"
 #show=0
 
 title="${energy}-GeV "
@@ -49,5 +49,5 @@ then
     title+='$p$'
 fi
 
-#python display.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o=$output -s=$show
-python display.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o="$output"
+#python projection.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o=$output -s=$show
+python projection.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o="$output"
