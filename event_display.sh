@@ -1,8 +1,10 @@
 #! /bin/bash
 source /afs/ihep.ac.cn/users/c/chenjiyuan/conda.env
 
+#Available modes: "display" for event display, and "projection" for energy projection. They must correspond to the names of the existing python files!
+mode="projection"
 energy=60
-particle="pi-"
+particle="e-"
 
 if [ $particle = "e-" ]
 then
@@ -12,11 +14,15 @@ then
     job=2
 fi
 
+char="${mode:0:1}"
+upper="${char^^}"
+mode_upper="${upper}${mode:1}"
+
 filename="/cefs/higgs/chenjiyuan/cepc-pid/run/cubic/root/thick1_layer30/job${job}_${particle}_${energy}GeV/hit_calo_${particle}_${energy}GeV_Run0.root"
 #tree=treeEvt
 event_index=2025
 save_dir="/cefs/higgs/chenjiyuan/cepc-pid/figs/"
-output="Display_${particle}_${energy}GeV.pdf"
+output="${mode_upper}_${particle}_${energy}GeV.pdf"
 #show=0
 
 title="${energy}-GeV "
@@ -49,5 +55,5 @@ then
     title+='$p$'
 fi
 
-#python display.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o=$output -s=$show
-python display.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o="$output"
+#python ${mode}.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o="$output" -s=$show
+python ${mode}.py -f=$filename -i="$title" -e=$event_index -d=$save_dir -o="$output"
