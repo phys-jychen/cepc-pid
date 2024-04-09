@@ -24,7 +24,7 @@ def read_file(fname: str, tree: str, event_index: int):
 
         x = np.round(Hit_X[event_index] / CellWidthX + 0.5).astype(int)
         y = np.round(Hit_Y[event_index] / CellWidthY + 0.5).astype(int)
-        z = np.round(Hit_Z[event_index] / LayerThick + 0.5).astype(int)
+        z = np.round(Hit_Z[event_index] / LayerThick).astype(int)
         energy = Hit_Energy[event_index]
 
         assert len(x) == len(y)
