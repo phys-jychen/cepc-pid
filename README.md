@@ -68,9 +68,9 @@ In the directory you have installed, run
 ```shell
 ./event_display.sh
 ```
-to obtain a figure of event display or energy projection (on $xOy$ plane), which will be saved in a directory assigned in this shell script (default: `figs/`).
+to obtain a figure of event display or two figures of energy projection (on three axes and three primary projection planes), which will be saved in a directory assigned in this shell script.
 
-You can modify these two shell scripts to meet your own needs: display type (event display or energy projection), input ROOT file, tree name, title of the figure, ID of the event, directory to save the output file, name of the output file, and instantly show the figure or not.
+You can modify this shell script to meet your own needs: display type (event display or energy projection), input ROOT file, tree name, title of the figure, ID of the event, directory to save the output file, name of the output file, and instantly show the figure or not.
 
 ## Environment Set-up
 This project requires CMake version >= 3.17. If you are working on the cluster of INPAC, IHEP, etc., the environment can be easily set up by simply executing
